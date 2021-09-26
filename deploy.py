@@ -6,6 +6,8 @@ from web3 import Web3
 from dotenv import load_dotenv
 import os
 
+load_dotenv()
+
 with open("./SimpleStorage.sol", "r") as file:
     simple_storage_file = file.read()
 
