@@ -3,6 +3,8 @@
 from solcx import compile_standard, install_solc
 import json
 from web3 import Web3
+from dotenv import load_dotenv
+import os
 
 with open("./SimpleStorage.sol", "r") as file:
     simple_storage_file = file.read()
@@ -45,7 +47,7 @@ w3 = Web3(Web3.HTTPProvider("HTTP://127.0.0.1:7545"))
 chain_id = 1337
 
 my_address = "0x81C7567367C8B7Bd876Ea35a45f6940546466bB8"
-private_key = "0xf4c69b0b7a9ddc14e8f62fd77b5754b2221d3ed37c4c31f67090518eb3c85a13"
+private_key = os.getenv("PRIVATE_KEY")
 
 
 # Create the contract in Python
