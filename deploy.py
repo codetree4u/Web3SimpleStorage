@@ -61,4 +61,7 @@ transaction = SimpleStorage.constructor().buildTransaction(
     {"chainId": chain_id, "from": my_address, "nonce": nonce}
 )
 
-print(transaction)
+
+# Sign the transaction
+signed_txn = w3.eth.account.sign_transaction(transaction, private_key=private_key)
+print(signed_txn)
